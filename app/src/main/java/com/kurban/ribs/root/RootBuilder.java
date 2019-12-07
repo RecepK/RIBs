@@ -49,7 +49,7 @@ public class RootBuilder
 
     @Override
     protected RootView inflateView(LayoutInflater inflater, ViewGroup parentViewGroup) {
-        return (RootView) inflater.inflate(R.layout.activity_main, parentViewGroup, false);
+        return (RootView) inflater.inflate(R.layout.rib_main, parentViewGroup, false);
     }
 
     public interface ParentComponent {
