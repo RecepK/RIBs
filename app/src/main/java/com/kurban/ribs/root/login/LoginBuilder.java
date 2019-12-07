@@ -3,6 +3,7 @@ package com.kurban.ribs.root.login;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.kurban.ribs.R;
 import com.uber.rib.core.InteractorBaseComponent;
 import com.uber.rib.core.ViewBuilder;
 
@@ -48,9 +49,7 @@ public class LoginBuilder
 
   @Override
   protected LoginView inflateView(LayoutInflater inflater, ViewGroup parentViewGroup) {
-    // TODO: Inflate a new view using the provided inflater, or create a new view programatically using the
-    // provided context from the parentViewGroup.
-    return null;
+      return (LoginView) inflater.inflate(R.layout.rib_login, parentViewGroup, false);
   }
 
   public interface ParentComponent {

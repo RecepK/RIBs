@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.kurban.ribs.R;
+import com.kurban.ribs.root.login.LoginBuilder;
 import com.uber.rib.core.InteractorBaseComponent;
 import com.uber.rib.core.ViewBuilder;
 
@@ -69,7 +70,7 @@ public class RootBuilder
                 Component component,
                 RootView view,
                 RootInteractor interactor) {
-            return new RootRouter(view, interactor, component);
+            return new RootRouter(view, interactor, component, new LoginBuilder(component));
         }
 
         // TODO: Create provider methods for dependencies created by this Rib. These should be static.
@@ -78,7 +79,10 @@ public class RootBuilder
     @RootScope
     @dagger.Component(modules = Module.class,
             dependencies = ParentComponent.class)
-    interface Component extends InteractorBaseComponent<RootInteractor>, BuilderComponent {
+    interface Component extends
+            InteractorBaseComponent<RootInteractor>,
+            LoginBuilder.ParentComponent,
+            BuilderComponent {
 
         @dagger.Component.Builder
         interface Builder {

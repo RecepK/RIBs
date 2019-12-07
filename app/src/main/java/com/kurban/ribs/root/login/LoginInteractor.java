@@ -34,7 +34,7 @@ public class LoginInteractor
 
         Context context = presenter.getContext();
 
-        String msg = context.getString(R.string.app_name);
+        String msg = context.getString(R.string.hello_world);
 
         presenter.setText(msg);
 
